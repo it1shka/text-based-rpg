@@ -1,0 +1,6 @@
+name = "text_rpg_gleam"
+version = "0.1.0"
+description = "A text-based RPG written in Gleam"
+
+[dependencies]
+gleam_stdlib = "~> 0.30"
