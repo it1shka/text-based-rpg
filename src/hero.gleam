@@ -10,13 +10,12 @@ pub type Hero {
   )
 }
 
-pub fn new(name: String) -> Hero {
-  Hero (
-    name,
-    health: 10.0,
-    armor: 0.0,
-    damage: 2.0,
-  )
+pub fn new() -> Hero {
+  let name = utils.read_string("Hero name: ")
+  let health = utils.read_float("Hero health: ")
+  let armor = utils.read_float("Hero armor: ")
+  let damage = utils.read_float("Hero damage: ")
+  Hero(name, health, armor, damage)
 }
 
 pub fn to_string(hero: Hero) -> String {

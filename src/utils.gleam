@@ -2,6 +2,7 @@ import gleam/option as opt
 import gleam/iterator as iter
 import gleam/int
 import gleam/float
+import gleam/string
 
 pub fn index_of(list: List(a), value: a) {
   let result = 
@@ -58,4 +59,29 @@ pub fn format_float(value: Float) -> String {
   value 
     |> round(upto: 2)
     |> float.to_string
+}
+
+@external(erlang, "Elixir.IO", "gets")
+pub fn read_line(message: String) -> String
+
+pub fn read_string(message: String) -> String {
+  read_line(message) |> string.trim()
+}
+
+const int_warning = "The value you provided is not an integer. "
+pub fn read_integer(message: String) -> Int {
+  let result = read_string(message) |> int.parse
+  case result {
+    Error(_) -> read_integer(int_warning <> message)
+    Ok(value) -> value
+  }
+}
+
+const float_warning = "The value you provided is not a float. "
+pub fn read_float(message: String) -> Float {
+  let result = read_string(message) |> float.parse
+  case result {
+    Error(_) -> read_float(float_warning <> message)
+    Ok(value) -> value
+  }
 }
