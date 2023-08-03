@@ -97,3 +97,6 @@ pub fn dedent(text: String) -> String {
 
 @external(erlang, "Elixir.Utils", "clear_terminal")
 pub fn clear_console() -> Nil
+
+@external(erlang, "Elixir.File", "read!")
+pub fn read_file(filepath: String) -> String
