@@ -100,3 +100,16 @@ pub fn clear_console() -> Nil
 
 @external(erlang, "Elixir.File", "read!")
 pub fn read_file(filepath: String) -> String
+
+pub fn for_each(list: List(a), action: fn(a) -> Nil) {
+  case list {
+    [head, ..tail] -> {
+      action(head)
+      for_each(tail, action)
+    }
+    [] -> Nil
+  }
+}
+
+@external(erlang, "Elixir.Enum", "random")
+pub fn choice(list: List(a)) -> a

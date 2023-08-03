@@ -34,10 +34,11 @@ pub fn to_string(enemy: Enemy) -> String {
 pub fn read_batch_from(filepath: String) -> List(Enemy) {
   utils.read_file(filepath)
     |> string.split(on: "%%")
+    |> list.map(string.trim)
+    |> list.filter(fn (elem) { !string.is_empty(elem) })
     |> list.map(fn (enemy_string) {
       let list_of_parameters = 
         enemy_string
-          |> string.trim
           |> string.split(on: "\n")
           |> list.map(fn (parameter) {
             let [key, value] = 

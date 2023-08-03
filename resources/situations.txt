@@ -1,0 +1,7 @@
+Walking in a corridor, {hero} meets 
+horrible {enemy}
+
+%%
+
+Wandering across abandoned castle, {hero}
+runs into its guard, {enemy}
