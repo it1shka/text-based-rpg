@@ -129,3 +129,16 @@ pub fn typewrite(message: String) -> Nil {
     Error(_) -> Nil
   }
 }
+
+pub fn typewrite_and_input(message: String) -> String {
+  clear_console()
+  typewrite(message <> "\n")
+  let result = read_string("")
+  clear_console()
+  result
+}
+
+pub fn typewrite_page(message: String) -> Nil {
+  typewrite_and_input(message)
+  Nil
+}

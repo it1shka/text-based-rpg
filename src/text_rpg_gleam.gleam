@@ -1,7 +1,7 @@
 import hero.{Hero}
 import enemy.{Enemy}
 import situations
-import utils.{typewrite}
+import utils.{typewrite, typewrite_and_input, typewrite_page}
 
 const enemy_file_path = "resources/enemies.txt"
 const situations_file_path = "resources/situations.txt"
@@ -21,14 +21,14 @@ fn start_round (
   utils.clear_console()
   case player.health {
     health if health <=. 0.0 -> 
-      typewrite("Your hero died. Game over!")
+      typewrite_page("Your hero died. Game over!")
     health if health >=. 0.0 -> {
       let current_enemy = utils.choice(enemy_list)
       let current_situation = utils.choice(possible_situations)
       let situation_description = 
         current_situation
           |> situations.compile_situation(player, current_enemy)
-      typewrite(situation_description <> "\n")
+      typewrite_page(situation_description)
     }
   }
 }
