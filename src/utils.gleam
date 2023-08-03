@@ -4,6 +4,7 @@ import gleam/int
 import gleam/float
 import gleam/string
 import gleam/list
+import gleam/io
 
 pub fn index_of(list: List(a), value: a) {
   let result = 
@@ -113,3 +114,18 @@ pub fn for_each(list: List(a), action: fn(a) -> Nil) {
 
 @external(erlang, "Elixir.Enum", "random")
 pub fn choice(list: List(a)) -> a
+
+@external(erlang, "Elixir.Process", "sleep")
+pub fn sleep(time: Int) -> Nil
+
+const typewrite_delay = 10
+pub fn typewrite(message: String) -> Nil {
+  case message |> string.pop_grapheme {
+    Ok(#(first, rest)) -> {
+      io.print(first)
+      sleep(typewrite_delay)
+      typewrite(rest)
+    }
+    Error(_) -> Nil
+  }
+}

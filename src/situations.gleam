@@ -14,7 +14,7 @@ pub fn read_situations(filepath: String) -> List(String) {
     line
       |> string.split("\n")
       |> list.map(string.trim)
-      |> string.join(with: "\n")
+      |> string.join(with: " ")
   })
 }
 

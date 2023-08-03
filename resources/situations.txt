@@ -1,7 +1,9 @@
 Walking in a corridor, {hero} meets 
-horrible {enemy}
+horrible {enemy}. It notices you and 
+starts approaching quickly. You start 
+shaking in fear.
 
 %%
 
 Wandering across abandoned castle, {hero}
-runs into its guard, {enemy}
+runs into its guard, {enemy}.
