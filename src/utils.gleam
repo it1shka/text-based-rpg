@@ -3,6 +3,7 @@ import gleam/iterator as iter
 import gleam/int
 import gleam/float
 import gleam/string
+import gleam/list
 
 pub fn index_of(list: List(a), value: a) {
   let result = 
@@ -85,3 +86,14 @@ pub fn read_float(message: String) -> Float {
     Ok(value) -> value
   }
 }
+
+pub fn dedent(text: String) -> String {
+  text
+    |> string.split(on: "\n")
+    |> list.map(string.trim)
+    |> list.filter(fn (elem) { !string.is_empty(elem) })
+    |> string.join(with: "\n")
+}
+
+@external(erlang, "Elixir.Utils", "clear_terminal")
+pub fn clear_console() -> Nil
