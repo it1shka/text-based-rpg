@@ -142,3 +142,6 @@ pub fn typewrite_page(message: String) -> Nil {
   typewrite_and_input(message)
   Nil
 }
+
+@external(erlang, "Elixir.Utils", "random_upto")
+pub fn random_upto(bound: Int) -> Int

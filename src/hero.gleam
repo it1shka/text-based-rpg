@@ -2,6 +2,7 @@ import utils
 import gleam/string
 import gleam/io
 import gleam/int
+import gleam/float
 
 pub type Hero {
   Hero (
@@ -112,4 +113,14 @@ pub fn to_string(hero: Hero) -> String {
     "causing damage", damage,
     "being lucky by", luck
   ], with: " ") 
+}
+
+pub fn cast_damage(hero: Hero) -> Float {
+  let Hero(damage: damage, luck: luck, ..) = hero
+  let lucky_damage = 
+    luck
+      |> float.round
+      |> utils.random_upto
+      |> int.to_float
+  damage +. lucky_damage /. 3.0
 }
