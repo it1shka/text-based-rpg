@@ -37,3 +37,45 @@ damage: 10.0
 enemy_type: Guard
 health: 12.0
 damage: 6.0
+
+%%
+
+enemy_type: Harpy
+health: 9.0
+damage: 9.0
+
+%%
+
+enemy_type: Werewolf
+health: 18.0
+damage: 8.0
+
+%%
+
+enemy_type: Witch
+health: 14.0
+damage: 12.0
+
+%%
+
+enemy_type: Ogre
+health: 25.0
+damage: 6.0
+
+%%
+
+enemy_type: Demon
+health: 30.0
+damage: 15.0
+
+%%
+
+enemy_type: Robot
+health: 12.0
+damage: 7.0
+
+%%
+
+enemy_type: Vampire
+health: 8.0
+damage: 13.0
