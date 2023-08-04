@@ -1,12 +1,12 @@
 enemy_type: Goblin
 health: 5.0
-damage: 1.0
+damage: 8.0
 
 %%
 
 enemy_type: Prince
 health: 20.0
-damage: 5.0
+damage: 7.0
 
 %%
 
@@ -18,7 +18,7 @@ damage: 7.0
 
 enemy_type: Zombie
 health: 7.0
-damage: 3.0
+damage: 5.0
 
 %%
 
@@ -30,7 +30,7 @@ damage: 10.0
 
 enemy_type: Mimic
 health: 50.0
-damage: 1.0
+damage: 10.0
 
 %%
 

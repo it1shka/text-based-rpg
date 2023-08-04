@@ -54,7 +54,7 @@ fn start_battle(player: Hero, current_enemy: Enemy, turn: Bool) -> Hero {
     
     _ if enemy_dead -> {
       typewrite_page("The enemy was defeated. ")
-      player |> hero.select_buffs_for_hero(5)
+      player |> hero.select_buffs_for_hero(3)
     }
 
     True -> {
@@ -90,7 +90,7 @@ fn start_battle(player: Hero, current_enemy: Enemy, turn: Bool) -> Hero {
         |> utils.random_upto
         |> int.to_float
       let actual_damage = 
-        current_enemy.damage -. armor_block /. 3.0 -. player.armor
+        current_enemy.damage -. armor_block /. 3.0 -. player.armor /. 2.25
         |> float.max(0.0)
       let next_player_health = {player.health -. actual_damage} |> float.max(0.0)
       let next_player = Hero(..player, health: next_player_health)
